@@ -7,7 +7,6 @@
 
 using namespace eosio;
 
-/// @abi action
 void seed::create( uint64_t seed_id, asset initial_supply)
 {
     require_auth( _self );
@@ -29,7 +28,7 @@ void seed::create( uint64_t seed_id, asset initial_supply)
     });
 }
 
-void seed::growdistribute(uint64_t ratio, uint64_t seed_id)
+void seed::growdistrib(uint64_t ratio, uint64_t seed_id)
 {
     stats statstable( _self, seed_id );
     auto existing = statstable.find( seed_id);
@@ -196,4 +195,4 @@ void seed::add_seed( account_name owner, asset value, account_name ram_payer )
 }
 
 
-EOSIO_ABI( seed, (create)(growdistribute)(burn)(plant)(cutdownplant)(transfer) )
+EOSIO_ABI( seed, (create)(growdistrib)(burn)(plant)(cutdownplant)(transfer) )

@@ -32,7 +32,7 @@ class seed : public contract {
                      string       memo );
    
       /// @abi action
-      void growdistribute(uint64_t ratio, uint64_t seed_id);
+      void growdistrib(uint64_t ratio, uint64_t seed_id);
 
       /// @abi action
       void burn( account_name from, asset value );
